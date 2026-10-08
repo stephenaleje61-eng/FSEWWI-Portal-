@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FSEWWI Portal - Foundation for Widows &amp; Widowers</title>
+    <meta name="description" content="Official application and registration portal for Foundation for the Support &amp; Empowerment of Widows &amp; Widowers Initiative (FSEWWI)." />
+    <meta property="og:title" content="FSEWWI Portal - Foundation for Widows &amp; Widowers" />
+    <meta property="og:description" content="Official application and registration portal for Foundation for the Support &amp; Empowerment of Widows &amp; Widowers Initiative (FSEWWI)." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Environment Safety Guard for Vite WebSocket/HMR in Cloud Run / Preview -->
+    <script>
+      (function() {
+        var isViteWsError = function(val) {
+          if (!val) return false;
+          var msg = (val.message || String(val)).toLowerCase();
+          return msg.indexOf('websocket closed without opened') !== -1 ||
+                 (msg.indexOf('websocket') !== -1 && msg.indexOf('vite') !== -1);
+        };
+        window.addEventListener('error', function(event) {
+          if (isViteWsError(event.error) || isViteWsError(event.message)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isViteWsError(event.reason)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+        var origConsoleError = console.error;
+        console.error = function() {
+          var combined = Array.prototype.slice.call(arguments).map(function(a) {
+            return (a && a.message) || String(a);
+          }).join(' ');
+          if (isViteWsError(combined)) {
+            return;
+          }
+          origConsoleError.apply(console, arguments);
+        };
+      })();
+    </script>
+    
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <meta name="theme-color" content="#0b2d72" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FSEWWI" />
+    <meta name="application-name" content="FSEWWI" />
+
+    <!-- Icons & Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-purple-100 selection:text-purple-900">
+    <div id="root">
+      <!-- Initial Loading Shell - Prevents White Screen during script fetch & hydration -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; padding: 24px; text-align: center; box-sizing: border-box;">
+        <div style="width: 88px; height: 88px; border-radius: 50%; background: #ffffff; box-shadow: 0 10px 25px -5px rgba(11,45,114,0.15), 0 8px 10px -6px rgba(11,45,114,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 2.5px solid #fbbf24; padding: 6px; box-sizing: border-box;">
+          <img src="/logo.svg" alt="FSEWWI Official Emblem" style="width: 100%; height: 100%; object-fit: contain; pointer-events: none;" />
+        </div>
+        <h1 style="color: #0b2d72; font-size: 15px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; margin: 0 0 6px 0; font-family: 'Cinzel', serif;">
+          FSEWWI Portal
+        </h1>
+        <p style="color: #64748b; font-size: 12px; margin: 0 0 24px 0; max-width: 320px; line-height: 1.4;">
+          Foundation for the Support &amp; Empowerment of Widows &amp; Widowers Initiative
+        </p>
+        <div style="display: flex; align-items: center; gap: 10px; color: #4338ca; font-size: 12px; font-weight: 700; background: #eef2ff; padding: 8px 16px; border-radius: 9999px; border: 1px solid #c7d2fe;">
+          <div style="width: 14px; height: 14px; border: 2.5px solid #c7d2fe; border-top-color: #4338ca; border-radius: 50%; animation: fsewwi-spin 0.75s linear infinite;"></div>
+          <span>Loading secure portal...</span>
+        </div>
+        <div id="fsewwi-load-hint" style="display: none; margin-top: 20px;">
+          <p style="font-size: 11px; color: #94a3b8; margin-bottom: 8px;">Taking longer than expected?</p>
+          <button onclick="window.location.reload(true)" style="background: #0f388a; color: white; border: none; padding: 8px 16px; font-size: 11px; font-weight: bold; border-radius: 8px; cursor: pointer;">
+            Reload Page
+          </button>
+        </div>
+        <style>
+          @keyframes fsewwi-spin {
+            to { transform: rotate(360deg); }
+          }
+        </style>
+        <script>
+          setTimeout(function() {
+            var hint = document.getElementById('fsewwi-load-hint');
+            if (hint) hint.style.display = 'block';
+          }, 4500);
+        </script>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

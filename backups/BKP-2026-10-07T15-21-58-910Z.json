@@ -1,0 +1,94 @@
+{
+  "reference": "BKP-2026-10-07T15-21-58-910Z",
+  "createdAt": "2026-10-07T15:21:58.967Z",
+  "metadata": {
+    "totalUsers": 1,
+    "totalApplicants": 1,
+    "totalApplications": 1,
+    "totalPhotos": 0,
+    "version": "1.0",
+    "environment": "production"
+  },
+  "tables": {
+    "users": [
+      {
+        "id": 1,
+        "uid": "USR-2026-000001",
+        "email": "martha.ameh@fsewwi.org",
+        "passwordHash": "[PROTECTED_HASH]",
+        "passwordSalt": "[PROTECTED_SALT]",
+        "fullName": "Mrs. Martha Ameh",
+        "displayName": "Mrs. Martha Ameh",
+        "phoneNumber": "08062525046",
+        "gender": "Female",
+        "dateOfBirth": null,
+        "address": null,
+        "state": "Benue",
+        "lga": "Makurdi",
+        "widowStatus": "Widow",
+        "profilePhoto": null,
+        "identificationType": "National ID (NIN)",
+        "identificationNumber": null,
+        "role": "applicant",
+        "emailVerified": true,
+        "verificationStatus": "Pending",
+        "accountStatus": "Active",
+        "lastLoginAt": "2026-10-07T15:21:55.401Z",
+        "createdAt": "2026-10-07T15:21:51.293Z",
+        "updatedAt": "2026-10-07T15:21:51.293Z"
+      }
+    ],
+    "applicants": [
+      {
+        "id": 1,
+        "userId": "USR-2026-000001",
+        "title": "Mrs.",
+        "surname": "Ameh",
+        "otherNames": "Mrs. Martha",
+        "phoneNumber": "08062525046",
+        "nationality": "Nigerian",
+        "state": "Benue",
+        "lga": "Makurdi",
+        "highestQualification": "Secondary",
+        "clergyName": "",
+        "childrenCount": 0,
+        "childrenInSchool": 0,
+        "childrenOutOfSchool": 0,
+        "professionalSkills": "Tailoring",
+        "acquiredSkills": "",
+        "createdAt": "2026-10-07T15:21:51.310Z",
+        "updatedAt": "2026-10-07T15:21:51.310Z"
+      }
+    ],
+    "applications": [
+      {
+        "id": 1,
+        "referenceNumber": "FSEWWI-2026-000001",
+        "userId": "USR-2026-000001",
+        "applicantId": 1,
+        "status": "Draft",
+        "declarationAccepted": false,
+        "signatureData": null,
+        "signatureDate": null,
+        "reviewNotes": null,
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "submittedAt": null,
+        "createdAt": "2026-10-07T15:21:51.342Z",
+        "updatedAt": "2026-10-07T15:21:51.342Z"
+      }
+    ],
+    "photos": [],
+    "auditLogs": [
+      {
+        "id": 1,
+        "adminEmail": "martha.ameh@fsewwi.org",
+        "action": "USER_REGISTERED_PERMANENT",
+        "targetReference": "USR-2026-000001",
+        "details": "User registered with email martha.ameh@fsewwi.org, name: Mrs. Martha Ameh",
+        "ipAddress": "registration-portal",
+        "createdAt": "2026-10-07T15:21:51.356Z"
+      }
+    ]
+  }
+}

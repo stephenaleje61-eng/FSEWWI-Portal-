@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "Foundation for the Support & Empowerment of Widows & Widowers Initiative",
+  "short_name": "FSEWWI",
+  "description": "Official application and registration portal for Foundation for the Support & Empowerment of Widows & Widowers Initiative (FSEWWI).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0b2d72",
+  "background_color": "#ffffff",
+  "categories": ["lifestyle", "social"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

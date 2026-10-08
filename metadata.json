@@ -1,0 +1,6 @@
+{
+  "name": "FSEWWI Portal - Foundation for Widows & Widowers",
+  "description": "Official application and registration portal for Foundation for the Support & Empowerment of Widows & Widowers Initiative (FSEWWI).",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
